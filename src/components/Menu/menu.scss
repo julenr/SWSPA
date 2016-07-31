@@ -1,0 +1,64 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+/*=================================================================================
+	Menu Design
+=================================================================================*/
+
+.menu {
+  position:absolute;
+  background: black;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  overflow-y:auto;
+  opacity:0;
+  visibility:hidden;
+  transition:all .3s ease;
+  z-index:199;
+  &.show-menu {
+    opacity: .8;
+    visibility: visible;
+    &.menu {
+      opacity: .8;
+      visibility: visible;
+    }
+  }
+}
+
+
+div.show-menu .menu{
+  opacity: .8;
+  visibility:visible;
+}
+div.show-menu .menu-items > ul > li > a{
+  opacity:1;
+  transform:translateY(0px);
+}
+
+span.show-menu .menu-items > ul {
+  > li:nth-of-type(1) > a{
+    transition-delay:.4s;
+  }
+  > li:nth-of-type(2) > a{
+    transition-delay:.5s;
+  }
+  > li:nth-of-type(3) > a{
+    transition-delay:.6s;
+  }
+  > li:nth-of-type(4) > a{
+    transition-delay:.7s;
+  }
+  > li:nth-of-type(5) > a{
+    transition-delay:.8s;
+  }
+  > li:nth-of-type(6) > a{
+    transition-delay:.9s;
+  }
+  > li:nth-of-type(7) > a{
+    transition-delay:1s;
+  }
+}
+

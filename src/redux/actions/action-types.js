@@ -1,0 +1,6 @@
+
+export const DUMMY_ACTION = 'DUMMY_ACTION';
+
+export const SW_DATA_LOADING = 'SW_DATA_LOADING';
+export const SW_DATA_LOADED = 'SW_DATA_LOADED';
+export const SW_DATA_LOADED_ERROR = 'SW_DATA_LOADED_ERROR';

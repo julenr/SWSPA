@@ -1,0 +1,50 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.films {
+  &__flex-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+.film {
+  color: $app_yellow_1;
+  flex: 1;
+  margin: 20px;
+  min-width: 200px;
+  max-width: 200px;
+  height: 300px;
+  //box-shadow: -2px -2px 0 $app_yellow_1, 2px -2px 0 $app_yellow_1, -2px 2px 0 $app_yellow_1, 2px 2px 0 $app_yellow_1;
+  background: tint($app_yellow_1, 30%, black);
+  border: double $app_yellow_1;
+  &:before {
+    content: "";
+    float: right;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: tint($app_yellow_1, 30%, black) $app_yellow_1;
+  }
+  &__container {
+    padding: 10px;
+    > div:not(:first-child) {
+      margin-bottom: 10px;
+    }
+    .attribute {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: $font-size-medium;
+    margin: 10px 0 20px 0;
+  }
+}

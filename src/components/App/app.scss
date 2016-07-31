@@ -1,0 +1,77 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+
+.menu-btn {
+  position: absolute;
+  height: 64px;
+  width: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  box-shadow: -1px -1px 0 $app_yellow_1, 1px -1px 0 $app_yellow_1, -1px 1px 0 $app_yellow_1, 1px 1px 0 $app_yellow_1;
+
+  right: 30px;
+  top: 30px;
+  bottom: auto;
+  left: auto;
+  transform: none;
+
+  //margin-top: -32px;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  z-index: 999;
+  transition: all .3s ease;
+  &:hover {
+    box-shadow: 0 10px 35px 0 rgba(0,0,0,.18);
+  }
+  > .lines {
+    vertical-align:middle;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    height:32px;
+    width:32px;
+    position:relative;
+    > span {
+      position:absolute;
+      left:0;
+      display:block;
+      height:4px;
+      border-radius:2px;
+      width:32px;
+      margin:auto;
+      background: $app_yellow_1;
+
+      //text-shadow: -1px -1px 0 $app_yellow_1, 1px -1px 0 $app_yellow_1, -1px 1px 0 $app_yellow_1, 1px 1px 0 $app_yellow_1;
+
+      transition:all .3s ease;
+    }
+    > .l1 { top:5px;  }
+    > .l2 { top:14px; }
+    > .l3 { top:23px; }
+  }
+}
+span.show-menu .menu-btn > .lines > .l2{
+  opacity:0;
+}
+span.show-menu .menu-btn > .lines > .l1,
+span.show-menu .menu-btn > .lines > .l3{
+  top:50%;
+  margin-top:-2px;
+}
+span.show-menu .menu-btn > .lines > .l1{
+  transform:rotate(45deg);
+}
+span.show-menu .menu-btn > .lines > .l3{
+  transform:rotate(-45deg);
+}
+
+
+@media(max-width:600px) {
+  .menu-items {
+    transform: none;
+    position: static;
+  }
+}
