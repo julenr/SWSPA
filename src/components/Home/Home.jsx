@@ -11,7 +11,7 @@ function Home() {
   return (
     <section className='section main-section' >
       <div className="home__flex-container" >
-        <h1 className="intro-title">STAR WARS<sub>SWAPI</sub></h1>
+        <h1 className="intro-title">STAR WARS<sub>UNIVERSE</sub></h1>
         <div className="titles">
           <div className="titles__content" dangerouslySetInnerHTML={{__html: introText}} />
         </div>

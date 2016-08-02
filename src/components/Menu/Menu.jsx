@@ -20,7 +20,7 @@ import './menu.scss';
 
 const Menu = (props) => {
   return (
-      <div className='menu show-menu' >
+      <div className='menu notshow-menu' >
         <nav className="menu-items" >
           <Link to="/People" className="menu__button">
             <div>Characters</div>
