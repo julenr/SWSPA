@@ -18,28 +18,49 @@ import classNames from 'classnames';
 // SASS Stylesheets
 import './menu.scss';
 
-const Menu = (props) => {
+const Menu = props => {
+  let classes = classNames({
+      'menu': true,
+      'show-menu': props.BurgerButtonActive
+    });
   return (
-      <div className='menu notshow-menu' >
+      <div className={classes} >
         <nav className="menu-items" >
-          <Link to="/People" className="menu__button">
-            <div>Characters</div>
-          </Link>
-          <Link to="/Films" className="menu__button">
-            <div>Films</div>
-          </Link>
-          <Link to="/Starships" className="menu__button">
-            <div>Starships</div>
-          </Link>
-          <Link to="/Vehicles" className="menu__button">
-            <div>Vehicles</div>
-          </Link>
-          <Link to="/Species" className="menu__button">
-            <div>Species</div>
-          </Link>
-          <Link to="/Planets" className="menu__button">
-            <div>Planets</div>
-          </Link>
+          <span className="menu-item">
+            <Link to="/" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Intro</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/People" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Characters</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/Films" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Films</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/Starships" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Starships</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/Vehicles" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Vehicles</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/Species" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Species</span>
+            </Link>
+          </span>
+          <span className="menu-item">
+            <Link to="/Planets" className="menu__button" onClick={() => props.menuButtonClick()}>
+              <span>Planets</span>
+            </Link>
+          </span>
         </nav>
       </div>
   );

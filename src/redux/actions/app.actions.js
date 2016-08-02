@@ -10,6 +10,12 @@ export function dummyAction(payload) {
   };
 }
 
+export function menuButtonClick() {
+  return {
+    type: types.MENU_BUTTON_CLICK
+  };
+}
+
 export function SWDataLoading(swType) {
   return {
     type: types.SW_DATA_LOADING,

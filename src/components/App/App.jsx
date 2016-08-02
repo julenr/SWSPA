@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as appActions from '../../redux/actions/app.actions';
+import classNames from 'classnames';
 
 import Menu from '../Menu';
 
@@ -10,6 +11,7 @@ import './app.scss';
 
 function mapStateToProps(state) {
   return {
+    BurgerButtonActive: state._app.burgerButtonActive,
     People: state._app.people,
     Films: state._app.films,
     Starships: state._app.starships,
@@ -24,17 +26,21 @@ export class App extends React.Component {
     const children = React.Children.map(this.props.children, child => React.cloneElement(child, {...this.props}));
     return (
       <div className="main-content">
-        <MenuButton />
-        <Menu {...this.props}/>
+        <MenuButton {...this.props} />
+        <Menu {...this.props} />
         {children || 'Welcome to SWAPI React'}
       </div>
     );
   }
 }
 
-const MenuButton = (props) => {
+const MenuButton = props => {
+  let classes = classNames({
+      'menu-btn': true,
+      'active': props.BurgerButtonActive
+    });
   return (
-    <a href="javascript: void 0" className="menu-btn" onClick={() => props.menuButtonClick()}>
+    <a href="javascript: void 0" className={classes} onClick={() => props.menuButtonClick()}>
       <span className="lines">
         <span className="l1" />
         <span className="l2" />
@@ -49,4 +55,3 @@ export default connect(
     ...appActions
   }
 )(App);
-

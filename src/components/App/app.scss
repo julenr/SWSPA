@@ -53,18 +53,18 @@
     > .l3 { top:23px; }
   }
 }
-span.show-menu .menu-btn > .lines > .l2{
+.menu-btn.active > .lines > .l2{
   opacity:0;
 }
-span.show-menu .menu-btn > .lines > .l1,
-span.show-menu .menu-btn > .lines > .l3{
+.menu-btn.active > .lines > .l1,
+.menu-btn.active > .lines > .l3{
   top:50%;
   margin-top:-2px;
 }
-span.show-menu .menu-btn > .lines > .l1{
+.menu-btn.active > .lines > .l1{
   transform:rotate(45deg);
 }
-span.show-menu .menu-btn > .lines > .l3{
+.menu-btn.active > .lines > .l3{
   transform:rotate(-45deg);
 }
 

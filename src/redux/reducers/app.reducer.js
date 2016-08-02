@@ -10,6 +10,9 @@ export function _app(state = initialState, action = {}) {
     case types.DUMMY_ACTION:
       newState.test = action.payload;
       return newState;
+    case types.MENU_BUTTON_CLICK:
+      newState.burgerButtonActive = !newState.burgerButtonActive;
+      return newState;
     case types.SW_DATA_LOADING:
       newState[action.swType].loading = true;
       return newState;
@@ -24,6 +27,3 @@ export function _app(state = initialState, action = {}) {
       return state;
   }
 }
-
-
-

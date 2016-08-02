@@ -18,7 +18,7 @@ import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
 // REDUX STORE
 const initialState = {
   _app: {
-    menuActive: true,
+    burgerButtonActive: false,
     types: ['people', 'films', 'starships', 'vehicles', 'species', 'planets'],
     people: {
       loading: false,

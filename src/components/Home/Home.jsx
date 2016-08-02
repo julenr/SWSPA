@@ -7,7 +7,7 @@ import './home.scss';
 
 import introText from './README.md';
 
-function Home() {
+const Home = props => {
   return (
     <section className='section main-section' >
       <div className="home__flex-container" >
