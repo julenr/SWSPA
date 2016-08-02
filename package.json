@@ -1,11 +1,11 @@
 {
-  "name": "swapi-react",
+  "name": "Star-Wars-Universe",
   "version": "0.1.0",
-  "description": "Swapi API React-Redux implementation",
+  "description": "Star Wars Universe",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seeeverything/miniproject-julen"
+    "url": "https://github.com/julenr/Star-Wars-Universe.git"
   },
   "scripts": {
     "prebuild": "npm version patch",
