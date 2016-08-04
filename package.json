@@ -16,7 +16,8 @@
     "tdd": "karma start --auto-watch --no-single-run"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=4",
+    "npm" : ">=3.3.12"
   },
   "keywords": [
     "React",
