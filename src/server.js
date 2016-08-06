@@ -43,6 +43,7 @@ if (isDeveloping) {
   });
 }
 
+// Run Express server
 app.listen(port, host, function onStart(err) {
   if (err) {
     console.log(err);
@@ -51,6 +52,7 @@ app.listen(port, host, function onStart(err) {
 });
 
 
+// Extract SW Universe from SWAPI API
 const SWAPI_URL_ROOT = 'http://swapi.co/api';
 const SWAPI_URL_PEOPLE = 'people';
 const SWAPI_URL_FILMS = 'films';
