@@ -13,11 +13,13 @@ import 'babel-polyfill';
 // REACT Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, Link, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router';
+import { useScroll } from 'react-router-scroll';
 
 // REDUX STORE
 const initialState = {
   _app: {
+    refresh: false,
     burgerButtonActive: false,
     types: ['people', 'films', 'starships', 'vehicles', 'species', 'planets'],
     people: {
@@ -69,7 +71,7 @@ document.body.appendChild(app);
 
 ReactDOM.render((
   <Provider store={ Store }>
-    <Router history={ browserHistory }>
+    <Router history={ browserHistory } render={applyRouterMiddleware(useScroll())}>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home }/>
         <Route path="/people" component={ People }/>

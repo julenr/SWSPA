@@ -24,7 +24,7 @@ const Film = ({film}) => {
     <div className="film">
       <div className="film__container">
         <div className="film__title">{film.title}</div>
-        <div className="character__gender"><span className="attribute">Director:</span> {film.director}</div>
+        <div className="character__gender"><span className="attribute">Director:</span>{film.director}</div>
       </div>
     </div>
   );

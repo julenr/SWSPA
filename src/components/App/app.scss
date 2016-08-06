@@ -2,9 +2,8 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
 
-
 .menu-btn {
-  position: absolute;
+  position: fixed;;
   height: 64px;
   width: 64px;
   line-height: 64px;

@@ -11,6 +11,7 @@ import './app.scss';
 
 function mapStateToProps(state) {
   return {
+    refresh: state._app.refresh,
     BurgerButtonActive: state._app.burgerButtonActive,
     People: state._app.people,
     Films: state._app.films,

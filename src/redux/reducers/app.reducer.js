@@ -12,6 +12,7 @@ export function _app(state = initialState, action = {}) {
       return newState;
     case types.MENU_BUTTON_CLICK:
       newState.burgerButtonActive = !newState.burgerButtonActive;
+      document.body.className = (newState.burgerButtonActive) ? 'body-freeze' : '';
       return newState;
     case types.SW_DATA_LOADING:
       newState[action.swType].loading = true;
@@ -19,6 +20,7 @@ export function _app(state = initialState, action = {}) {
     case types.SW_DATA_LOADED:
       newState[action.swType].loading = false;
       newState[action.swType].items = action.data;
+      newState.refresh = !newState.refresh;
       return newState;
     case types.SW_DATA_LOADED_ERROR:
       newState[action.swType].loading = false;

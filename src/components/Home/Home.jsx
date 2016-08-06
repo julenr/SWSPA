@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './home.scss';
 
-import introText from './README.md';
+import introText from '../../../README.md';
 
 const Home = props => {
   return (

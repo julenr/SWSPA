@@ -31,3 +31,7 @@ body {
   //letter-spacing: -0.05em;
   @include sw-title-style;
 }
+
+.body-freeze {
+  overflow: hidden;
+}
