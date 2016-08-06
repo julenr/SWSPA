@@ -24,14 +24,14 @@ const Planet = ({planet}) => {
     <article className="planet">
       <div className="planet__container">
         <div className="planet__name">{planet.name}</div>
-        <div className="planet__population"><span className="attribute">Population:</span> {planet.population}</div>
-        <div className="planet__diameter"><span className="attribute">Diameter:</span> {planet.diameter}</div>
-        <div className="planet__climate"><span className="attribute">Climate:</span> {planet.climate}</div>
-        <div className="planet__orbital-period"><span className="attribute">Orvital Period:</span> {planet.orbital_period}</div>
-        <div className="planet__gravity"><span className="attribute">Gravity:</span> {planet.gravity}</div>
-        <div className="planet__rotation-period"><span className="attribute">Rotation Period:</span> {planet.rotation_period}</div>
-        <div className="planet__surface-water"><span className="attribute">Surface Water:</span> {planet.surface_water}</div>
-        <div className="planet__terrain"><span className="attribute">Terrain:</span> {planet.terrain}</div>
+        <div className="planet__population"><span className="attribute">Population:</span>{planet.population}</div>
+        <div className="planet__diameter"><span className="attribute">Diameter:</span>{planet.diameter}</div>
+        <div className="planet__climate"><span className="attribute">Climate:</span>{planet.climate}</div>
+        <div className="planet__orbital-period"><span className="attribute">Orvital Period:</span>{planet.orbital_period}</div>
+        <div className="planet__gravity"><span className="attribute">Gravity:</span>{planet.gravity}</div>
+        <div className="planet__rotation-period"><span className="attribute">Rotation Period:</span>{planet.rotation_period}</div>
+        <div className="planet__surface-water"><span className="attribute">Surface Water:</span>{planet.surface_water}</div>
+        <div className="planet__terrain"><span className="attribute">Terrain:</span>{planet.terrain}</div>
       </div>
     </article>
   );

@@ -11,6 +11,46 @@ const port = isDeveloping ? 3000 : process.env.PORT;
 const host = process.env.HOST;
 const app = express();
 
+app.use('/api/:items', function (req, res, next) {
+  res.send(SWAPIWorld[req.params.items]);
+  res.end();
+});
+
+if (isDeveloping) {
+  const compiler = webpack(config);
+  const middleware = webpackMiddleware(compiler, {
+    hot: true,
+    noInfo: true,
+    publicPath: config.output.publicPath,
+  });
+  app.use(middleware);
+  app.use(webpackHotMiddleware(compiler));
+  app.use('*', function (req, res, next) {
+    var filename = path.join(compiler.outputPath, 'index.html');
+    compiler.outputFileSystem.readFile(filename, function(err, result){
+      if (err) {
+        return next(err);
+      }
+      res.set('content-type','text/html');
+      res.send(result);
+      res.end();
+    });
+  });
+} else {
+  app.use(express.static(__dirname + 'build'));
+  app.get('/', function response(req, res) {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
+  });
+}
+
+app.listen(port, host, function onStart(err) {
+  if (err) {
+    console.log(err);
+  }
+  console.info('Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
+});
+
+
 const SWAPI_URL_ROOT = 'http://swapi.co/api';
 const SWAPI_URL_PEOPLE = 'people';
 const SWAPI_URL_FILMS = 'films';
@@ -57,47 +97,6 @@ getSWAPIItems(SWAPIWorld.starships);
 getSWAPIItems(SWAPIWorld.vehicles);
 getSWAPIItems(SWAPIWorld.species);
 getSWAPIItems(SWAPIWorld.planets);
-
-app.use('/api/:items', function (req, res, next) {
-  res.send(SWAPIWorld[req.params.items]);
-  next();
-});
-
-if (isDeveloping) {
-  const compiler = webpack(config);
-  const middleware = webpackMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    contentBase: 'src',
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  });
-
-  app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
-  app.get('/', function response(req, res) {
-    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'build/index.html')));
-    res.end();
-  });
-} else {
-  app.use(express.static(__dirname + 'build'));
-  app.get('/', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'build/index.html'));
-  });
-}
-
-app.listen(port, host, function onStart(err) {
-  if (err) {
-    console.log(err);
-  }
-  console.info('Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
-});
-
 
 function getSWAPIItems(items, page = 1) {
   request
