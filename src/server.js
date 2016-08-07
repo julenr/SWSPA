@@ -37,9 +37,9 @@ if (isDeveloping) {
     });
   });
 } else {
-  app.use(express.static(__dirname + 'build'));
-  app.get('/', function response(req, res) {
-    res.sendFile(path.join(__dirname, 'build/index.html'));
+  app.use(express.static(__dirname + 'statics'));
+  app.get('*', function response(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
   });
 }
 
