@@ -1,4 +1,3 @@
-
 if (__DEV__) {
   console.log('DEVELOPMENT ENVIRONMENT ACTIVATED');
 }
@@ -13,7 +12,7 @@ import 'babel-polyfill';
 // REACT Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, applyRouterMiddleware } from 'react-router';
 import { useScroll } from 'react-router-scroll';
 
 // REDUX STORE

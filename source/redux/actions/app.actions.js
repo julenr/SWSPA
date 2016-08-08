@@ -44,6 +44,6 @@ export function loadSWData(type) {
     dispatch(SWDataLoading(type));
     return axios.get(`/api/${type}`)
         .then(response => dispatch(SWDataLoaded(response.data.collection, type)))
-        .catch(error => dispatch(SWDataLoadedError(type)));
+        .catch(error => dispatch(SWDataLoadedError(error)));
   };
 }

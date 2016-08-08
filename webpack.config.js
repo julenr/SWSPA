@@ -14,8 +14,8 @@ const pkg = require('./package.json');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
-  app: path.join(__dirname, 'src'),
-  imagesAssets: path.join(__dirname, 'src/assets'),
+  app: path.join(__dirname, 'source'),
+  imagesAssets: path.join(__dirname, 'source/assets'),
   build: path.join(__dirname, 'build')
 };
 const APP_TITLE = 'Swapi API React-Redux implementation';
@@ -180,7 +180,7 @@ if(TARGET === 'test' || TARGET === 'tdd') {
     devtool: 'inline-source-map',
     resolve: {
       alias: {
-        'src': PATHS.app
+        'source': PATHS.app
       }
     },
     module: {

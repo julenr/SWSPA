@@ -1,13 +1,12 @@
 
 import React from 'react';
-import { Link } from 'react-router';
 
 // SASS Stylesheets
 import './home.scss';
 
 import introText from '../../../README.md';
 
-const Home = props => {
+const Home = () => {
   return (
     <section className='section main-section' >
       <div className="home__flex-container" >
@@ -18,6 +17,6 @@ const Home = props => {
       </div>
     </section>
   );
-}
+};
 
 export default Home;

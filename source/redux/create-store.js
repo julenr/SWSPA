@@ -1,7 +1,7 @@
 
 import { createStore, applyMiddleware, compose} from 'redux';
 import createLogger from 'redux-logger';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 
 if (__DEV__){
   var devTools = require('remote-redux-devtools');
@@ -14,7 +14,7 @@ const loggerOptions = {
   duration: true, //: Boolean, // Print the duration of each action?
   timestamp: true, //: Boolean, // Print the timestamp with each action?
   colors: { // Object with color getters. See the ColorsObject interface.
-    title: action => 'green'
+    title: () => 'green'
   },
   logger: console, //: LoggerObject, // Implementation of the `console` API.
   logErrors: true, //: Boolean, // Should the logger catch, log, and re-throw errors?
@@ -33,7 +33,7 @@ const Store = {
   configureStore: state => {
     var middleware = (__DEV__) ? applyMiddleware(thunk, logger) : applyMiddleware(thunk);
     var enhancer;
-    if(__DEV__) {
+    if (__DEV__) {
       enhancer = compose(
         middleware,
         devTools({
@@ -47,13 +47,13 @@ const Store = {
     store = createStore(reducer, initialState, enhancer);
     return store;
   },
-  getState: function() {
+  getState: function () {
     return store.getState();
   },
-  getInitialState: function() {
+  getInitialState: function () {
     return initialState;
   },
-  dispatch: function(action) {
+  dispatch: function (action) {
     store.dispatch(action);
   }
 };

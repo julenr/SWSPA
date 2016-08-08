@@ -25,10 +25,10 @@ module.exports = function karmaConfig (config) {
       captureConsole: true
     },
     files: [
-      'src/**/*.test.js'
+      'source/**/*.test.js'
     ],
     preprocessors: {
-      'src/**/*.test.js': ['webpack', 'sourcemap']
+      'source/**/*.test.js': ['webpack', 'sourcemap']
     },
     webpack: require('./webpack.config'),
     webpackServer: { noInfo: true },

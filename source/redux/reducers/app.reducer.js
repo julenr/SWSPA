@@ -6,7 +6,7 @@ import * as types from '../actions/action-types';
 export function _app(state = initialState, action = {}) {
   let newState = {...state };
 
-  switch(action.type) {
+  switch (action.type) {
     case types.DUMMY_ACTION:
       newState.test = action.payload;
       return newState;
