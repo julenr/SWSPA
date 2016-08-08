@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './starships.scss';
 
-function Starships({Starships}) {
+function Starships({starships}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Starships</h1>
       <div className="starships__flex-container">
         {
-          Starships.items.map((starship, idx) => <Starship starship={starship} key={idx}/>)
+          starships.items.map((starship, idx) => <Starship starship={starship} key={idx}/>)
         }
       </div>
     </section>

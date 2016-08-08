@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './films.scss';
 
-function Films({Films}) {
+function Films({films}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Films</h1>
       <div className="films__flex-container">
         {
-          Films.items.map((film, idx) => <Film film={film} key={idx}/>)
+          films.items.map((film, idx) => <Film film={film} key={idx}/>)
         }
       </div>
     </section>

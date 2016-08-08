@@ -10,15 +10,15 @@ import Menu from '../Menu';
 import './app.scss';
 
 function mapStateToProps(state) {
+  const { 
+    refresh, burgerButtonActive,
+    people, films, starships, vehicles, species, planets
+  } = state._app;
+
   return {
-    refresh: state._app.refresh,
-    BurgerButtonActive: state._app.burgerButtonActive,
-    People: state._app.people,
-    Films: state._app.films,
-    Starships: state._app.starships,
-    Vehicles: state._app.vehicles,
-    Species: state._app.species,
-    Planets: state._app.planets
+    refresh,
+    burgerButtonActive,
+    people, films, starships, vehicles, species, planets    
   };
 }
 
@@ -29,7 +29,7 @@ export class App extends React.Component {
       <div className="main-content">
         <MenuButton {...this.props} />
         <Menu {...this.props} />
-        {children || 'Welcome to SWAPI React'}
+        {children || 'Welcome to Star Wars Universe'}
       </div>
     );
   }
@@ -38,7 +38,7 @@ export class App extends React.Component {
 const MenuButton = props => {
   let classes = classNames({
       'menu-btn': true,
-      'active': props.BurgerButtonActive
+      'active': props.burgerButtonActive
     });
   return (
     <a href="javascript: void 0" className={classes} onClick={() => props.menuButtonClick()}>

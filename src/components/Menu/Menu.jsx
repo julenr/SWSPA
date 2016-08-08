@@ -21,7 +21,7 @@ import './menu.scss';
 const Menu = props => {
   let classes = classNames({
       'menu': true,
-      'show-menu': props.BurgerButtonActive
+      'show-menu': props.burgerButtonActive
     });
   return (
       <div className={classes} >

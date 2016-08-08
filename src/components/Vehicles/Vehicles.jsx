@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './vehicles.scss';
 
-function Vehicles({Vehicles}) {
+function Vehicles({vehicles}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Vehicles</h1>
       <div className="vehicles__flex-container">
         {
-          Vehicles.items.map((vehicle, idx) => <Vehicle vehicle={vehicle} key={idx}/>)
+          vehicles.items.map((vehicle, idx) => <Vehicle vehicle={vehicle} key={idx}/>)
         }
       </div>
     </section>

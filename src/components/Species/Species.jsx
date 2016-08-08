@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './species.scss';
 
-function Species({Species}) {
+function Species({species}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Species</h1>
       <div className="species__flex-container">
         {
-          Species.items.map((specie, idx) => <Specie specie={specie} key={idx}/>)
+          species.items.map((specie, idx) => <Specie specie={specie} key={idx}/>)
         }
       </div>
     </section>

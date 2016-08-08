@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './people.scss';
 
-function People({People}) {
+function People({people}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Characters</h1>
       <div className="people__flex-container">
         {
-          People.items.map((character, idx) => <Character character={character} key={idx}/>)
+          people.items.map((character, idx) => <Character character={character} key={idx}/>)
         }
       </div>
     </section>

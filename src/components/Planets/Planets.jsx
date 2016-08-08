@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 // SASS Stylesheets
 import './planets.scss';
 
-function Planets({Planets}) {
+function Planets({planets}) {
   return (
     <section className='section main-section' >
       <h1 className="section__tile">Planets</h1>
       <div className="planets__flex-container" >
         {
-          Planets.items.map((planet, idx) => <Planet planet={planet} key={idx}/>)
+          planets.items.map((planet, idx) => <Planet planet={planet} key={idx}/>)
         }
       </div>
     </section>
